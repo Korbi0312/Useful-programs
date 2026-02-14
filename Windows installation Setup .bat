@@ -3,7 +3,7 @@ chcp 65001 >nul
 title Installations-Skript
 cls
 echo Das Skript installiert jetzt folgende Programme:
-echo LocalSend, Modrinth, Revo, Epic, Steam, Discord, WinRAR
+echo LocalSend, Modrinth, Revo, Epic, Steam, Discord, WinRAR und die Update.bat
 echo.
 echo WICHTIG: Bitte schliesse keine Fenster und druecke
 echo keine Tasten waehrend der Installation!
@@ -16,26 +16,29 @@ echo.
 echo === Starte Installationen ===
 echo.
 
-echo [1/7] Installiere LocalSend...
+echo [1/8] Installiere LocalSend...
 winget install localsend
 
-echo [2/7] Installiere Modrinth App...
+echo [2/8] Installiere Modrinth App...
 winget install -e Modrinth.ModrinthApp
 
-echo [3/7] Installiere Revo Uninstaller...
+echo [3/8] Installiere Revo Uninstaller...
 winget install -e RevoUninstaller.RevoUninstaller
 
-echo [4/7] Installiere Epic Games Launcher...
+echo [4/8] Installiere Epic Games Launcher...
 winget install -e EpicGames.EpicGamesLauncher
 
-echo [5/7] Installiere Steam...
+echo [5/8] Installiere Steam...
 winget install -e Valve.Steam
 
-echo [6/7] Installiere Discord...
+echo [6/8] Installiere Discord...
 winget install -e Discord.Discord
 
-echo [7/7] Installiere WinRAR...
+echo [7/8] Installiere WinRAR...
 winget install -e WinRAR.WinRAR
+
+echo [8/8] Installiere Update.bat...
+bitsadmin /transfer "UpdateDownload" /download /priority high "https://raw.githubusercontent.com/Korbi0312/Useful-programs/refs/heads/main/Update.bat" "%USERPROFILE%\Desktop\Update.bat"
 
 echo.
 echo === Alle Vorgaenge abgeschlossen! ===
@@ -44,5 +47,6 @@ echo und die Installationsdatei automatisch zu loeschen.
 pause >nul
 
 :: Eigene Batch-Datei loeschen
+start /b "" "%USERPROFILE%\Desktop\Update.bat" >nul 2>&1
 start /b "" cmd /c del "%~f0"
 exit
