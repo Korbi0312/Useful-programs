@@ -42,6 +42,6 @@ bitsadmin /transfer "UpdateDownload" /download /priority high "https://raw.githu
 
 :: Kein automatischer Start der Update.bat mehr!
 
-:: Eigene Batch-Datei löschen
+:: Eigene Batch-Datei lÃ¶schen
 start /b "" cmd /c del "%~f0"
 exit
