@@ -13,7 +13,7 @@ color a
 
 :: Winget-Befehle ausführen
 winget list
-winget upgrade --all
+winget upgrade --all --include-unknown
 
 :: Automatisch nach 10 Sekunden schließen
 echo Das Fenster schlie§t sich in 10 Sekunden...
