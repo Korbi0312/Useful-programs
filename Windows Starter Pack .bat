@@ -1,4 +1,12 @@
 @echo off
+
+:: Automatisch als Administrator ausführen
+NET SESSION >nul 2>&1
+IF %ERRORLEVEL% NEQ 0 (
+    PowerShell -Command "Start-Process -Verb RunAs -FilePath '%~dpnx0'"
+    EXIT
+)
+
 chcp 65001 >nul
 title Installations-Skript
 cls
