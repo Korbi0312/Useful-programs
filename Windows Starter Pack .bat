@@ -1,5 +1,4 @@
 @echo off
-
 :: Automatisch als Administrator ausführen
 NET SESSION >nul 2>&1
 IF %ERRORLEVEL% NEQ 0 (
